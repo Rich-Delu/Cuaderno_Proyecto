@@ -1,0 +1,22 @@
+{
+    "Suiza": {
+        "Costo de Hospedaje": "18000-23000$",
+        "Recomendable": "80%"
+    },
+    "Italia": {
+        "Costo de Hospedaje": "14000-22000$",
+        "Recomendable": "60%"
+    },
+    "Francia": {
+        "Costo de Hospedaje": "29000-30000$",
+        "Recomendable": "70%"
+    },
+    "Alemania": {
+        "Costo de Hospedaje": "14000-18000$",
+        "Recomendable": "70%"
+    },
+    "CDMX": {
+        "Costo de Hospedaje": "15000-23000$",
+        "Recomendable": "80%"
+    }
+}
