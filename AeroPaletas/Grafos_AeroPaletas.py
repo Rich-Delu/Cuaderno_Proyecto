@@ -223,6 +223,7 @@ class Aeropuertos_1:
         messagebox.showinfo("Acerca de los Desarolladores", "Delucio Fuentes Ricardo Ismael \nSoberanes Flores Ricardo")
 
     def menuPrincipal(self):
+        self.cargar_J()
         def acciones(x):
             titulo.destroy()
             intro.destroy()
@@ -236,15 +237,9 @@ class Aeropuertos_1:
         self.ventana.title("AeroPaletas")
         self.ventana.geometry("780x300+240+240")
         menu_principal=tk.Menu(self.ventana)
-
-        menu_archivo = tk.Menu(menu_principal, tearoff=0)
-        menu_archivo.add_command(label="Salir", command=self.salir)
-
-        menu_ayuda = tk.Menu(menu_principal, tearoff=0)
-        menu_ayuda.add_command(label="Acerca de los Alumnos ", command=self.acerca_de)
-
-        menu_principal.add_cascade(label="Salir", menu=menu_archivo)
-        menu_principal.add_cascade(label="Ayuda", menu=menu_ayuda)
+        
+        menu_principal.add_cascade(label="Salir", command=self.salir)
+        menu_principal.add_cascade(label="Acerca de los Alumnos", command=self.acerca_de)
         
         titulo=tk.Label(self.ventana, text="Bienvenido a Aeropaletas", font=("Arial", 18))
         intro=tk.Label(self.ventana, text="Que es lo primero que quieres hacer hoy?", font=("Arial", 14))

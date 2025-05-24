@@ -11,11 +11,9 @@ import tkinter as tk
 from tkinter import messagebox
  
 class AP:
-    def ContenedoresMen(self):
+    def ContenedoresMen(self, x):
         self.ventana.destroy()
-        def menu(x):
-            ventanaC.destroy()
-            if x==1:
+        if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -38,7 +36,7 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(1), ejecutar_accion()]).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=3)
-            elif x==2:
+        elif x==2:
                 def ejecutar_accion(y):
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -61,7 +59,7 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(1)).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(2)).grid(padx=20, row=4, column=3)
-            elif x==3:
+        elif x==3:
                 def ejecutar_accion(y):
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -84,7 +82,7 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(1)).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(2)).grid(padx=20, row=4, column=3)
-            elif x==4:
+        elif x==4:
                 def ejecutar_accion(y):
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -107,26 +105,10 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(1)).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(2)).grid(padx=20, row=4, column=3)
-        
-        ventanaC = tk.Tk()
-        ventanaC.title("Contenedores")
-        ventanaC.geometry("1500x400+240+240")
-        titulo=tk.Label(ventanaC, text="Elija la Practica a Ejecutar", font=("Arial", 18)).grid(pady=5, row=0, column=2)
-        p1=tk.Label(ventanaC, text="Practica 1 (Estructuras de Datos y Contenedores en Python)", font=("Arial", 14)).grid(padx=40, row=3, column=1)
-        p2=tk.Label(ventanaC, text="Practica 2 (Listas)", font=("Arial", 14)).grid(padx=20, row=3, column=2)
-        p3=tk.Label(ventanaC, text="Practica 3 (Conjuntos)", font=("Arial", 14)).grid(padx=40, row=3, column=3)
-        p4=tk.Label(ventanaC, text="Practica 4 (Diccionarios)", font=("Arial", 14)).grid(padx=80, row=3, column=4)
-        b1=tk.Button(ventanaC, text="Ejecutar", font=("Arial", 14),command=lambda:menu(1)).grid(padx=40, row=4, column=1)
-        b2=tk.Button(ventanaC, text="Ejecutar", font=("Arial", 14),command=lambda:menu(2)).grid(padx=20, row=4, column=2)
-        b3=tk.Button(ventanaC, text="Ejecutar", font=("Arial", 14),command=lambda:menu(3)).grid(padx=40, row=4, column=3)
-        b4=tk.Button(ventanaC, text="Ejecutar", font=("Arial", 14),command=lambda:menu(4)).grid(padx=80, row=4, column=4)                                                                  
-        ventanaC.mainloop()
 
-    def Colas_y_Pilas(self):
+    def Colas_y_Pilas(self,x):
         self.ventana.destroy()
-        def menu(x):
-            ventanaCyP.destroy()
-            if x==1:
+        if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -154,7 +136,7 @@ class AP:
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(1), ejecutar_accion()]).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(3), ejecutar_accion()]).grid(padx=20, row=4, column=3)
-            elif x==2:
+        elif x==2:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -177,22 +159,10 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(1), ejecutar_accion()]).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=3)
-            
-        ventanaCyP = tk.Tk()
-        ventanaCyP.title("Colas y Pilas")
-        ventanaCyP.geometry("800x400+240+240")
-        titulo=tk.Label(ventanaCyP, text="Elija la Practica a Ejecutar", font=("Arial", 18)).grid(pady=5, row=0, column=2)
-        p1=tk.Label(ventanaCyP, text="Practica 2.1 (Pilas)", font=("Arial", 14)).grid(padx=40, row=3, column=1)
-        p2=tk.Label(ventanaCyP, text="Practica 2.2 (Colas)", font=("Arial", 14)).grid(padx=20, row=3, column=3)
-        b1=tk.Button(ventanaCyP, text="Ejecutar", font=("Arial", 14),command=lambda:menu(1)).grid(padx=40, row=4, column=1)
-        b2=tk.Button(ventanaCyP, text="Ejecutar", font=("Arial", 14),command=lambda:menu(2)).grid(padx=20, row=4, column=3)                                                                
-        ventanaCyP.mainloop()
 
-    def Recur_y_Grafo(self):
+    def Recur_y_Grafo(self, x):
         self.ventana.destroy()
-        def menu(x):
-            ventanaRyG.destroy()
-            if x==1:
+        if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
                     if not ventana_abierta:
@@ -214,7 +184,7 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(1), ejecutar_accion()]).grid(padx=40, row=4, column=1)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=3)
-            elif x==2:
+        elif x==2:
                 def ejecutar_accion():
                     c1 = Aeropuertos()
                     c1.mostrar()
@@ -230,16 +200,6 @@ class AP:
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=ejecutar_accion).grid(padx=40, row=1, column=0)
                 tk.Button(ventanaP1, text="Salir", font=("Arial", 14), command=salir).grid(padx=40, row=2, column=0)
         
-        ventanaRyG = tk.Tk()
-        ventanaRyG.title("Recursivadad y Grafos")
-        ventanaRyG.geometry("800x500+240+240")
-        titulo=tk.Label(ventanaRyG, text="Elija la Practica a Ejecutar", font=("Arial", 18)).grid(pady=5, row=0, column=2)
-        p1=tk.Label(ventanaRyG, text="Practica 3.1 (Recursividad)", font=("Arial", 14)).grid(padx=40, row=3, column=1)
-        p2=tk.Label(ventanaRyG, text="Practica 3.2 (Grafos)", font=("Arial", 14)).grid(padx=20, row=3, column=3)
-        b1=tk.Button(ventanaRyG, text="Ejecutar", font=("Arial", 14),command=lambda:menu(1)).grid(padx=40, row=4, column=1)
-        b2=tk.Button(ventanaRyG, text="Ejecutar", font=("Arial", 14),command=lambda:menu(2)).grid(padx=20, row=4, column=3)                                                                
-        ventanaRyG.mainloop()
-        
     def Aeropal(self):
         self.ventana.destroy()
         aer=Aeropuertos_1()
@@ -248,7 +208,7 @@ class AP:
     def salir(self):
         self.ventana.destroy()
 
-    def acerca_de():
+    def acerca_de(self):
         messagebox.showinfo("Acerca del Alumno", "Alumno: Delucio Fuentes Ricardo Ismael")
 
     def menuPrincipal(self):
@@ -257,19 +217,26 @@ class AP:
         self.ventana.geometry("900x300+240+240")
         menu_principal=tk.Menu(self.ventana)
 
-        menu_archivo = tk.Menu(menu_principal, tearoff=0)
-        menu_archivo.add_command(label="Contenedores", command=self.ContenedoresMen)
-        menu_archivo.add_command(label="Colas y Pilas", command=self.Colas_y_Pilas)
-        menu_archivo.add_command(label="Recursividad y Grafos", command=self.Recur_y_Grafo)
-        menu_archivo.add_command(label="Proyecto", command=self.Aeropal)
-        menu_archivo.add_separator()
-        menu_archivo.add_command(label="Salir", command=self.salir)
+        menu_Contenedores = tk.Menu(menu_principal, tearoff=0)
+        menu_Contenedores.add_command(label="Practica 1 (Estructuras de Datos y Contenedores en Python)", command=lambda:self.ContenedoresMen(1))
+        menu_Contenedores.add_command(label="Practica 2 (Listas)", command=lambda:self.ContenedoresMen(2))
+        menu_Contenedores.add_command(label="Practica 3 (Conjuntos)", command=lambda:self.ContenedoresMen(3))
+        menu_Contenedores.add_command(label="Practica 4 (Diccionarios)", command=lambda:self.ContenedoresMen(4))
 
-        menu_ayuda = tk.Menu(menu_principal, tearoff=0)
-        menu_ayuda.add_command(label="Acerca del Alumno ", command=self.acerca_de)
+        menu_Colas_Pilas = tk.Menu(menu_principal, tearoff=0)
+        menu_Colas_Pilas.add_command(label="Practica 2.1 (Pilas)", command=lambda:self.Colas_y_Pilas(1))
+        menu_Colas_Pilas.add_command(label="Practica 2.2 (Colas)", command=lambda:self.Colas_y_Pilas(2))
+        
+        menu_Recur_Grafo = tk.Menu(menu_principal, tearoff=0)
+        menu_Recur_Grafo.add_command(label="Practica 3.1 (Recursividad)", command=lambda:self.Recur_y_Grafo(1))
+        menu_Recur_Grafo.add_command(label="Practica 3.2 (Grafos)", command=lambda:self.Recur_y_Grafo(2))
 
-        menu_principal.add_cascade(label="Archivo", menu=menu_archivo)
-        menu_principal.add_cascade(label="Ayuda", menu=menu_ayuda)
+        menu_principal.add_cascade(label="Contenedores", menu=menu_Contenedores)
+        menu_principal.add_cascade(label="Colas y Pilas", menu=menu_Colas_Pilas)
+        menu_principal.add_cascade(label="Recursividad y Grafos", menu=menu_Recur_Grafo)
+        menu_principal.add_cascade(label="Proyecto (AeroPaletas)", command=self.Aeropal)
+        menu_principal.add_cascade(label="Acerca de", command=self.acerca_de)       
+        menu_principal.add_cascade(label="Salir", command=self.salir)
 
         titulo=tk.Label(self.ventana, text="Cuaderno de Evidencias para el Segundo Parcial", font=("Arial", 18))
         intro=tk.Label(self.ventana, text="En este programa estan todas las practicas hechas y  guardadas en distintos menus", font=("Arial", 14))
