@@ -5,6 +5,7 @@ from Contenedores.Conjuntos import ConjuntosP1, Alumnos
 from Colas_y_Pilas.Colas import Cola, Tareas
 from Colas_y_Pilas.Pilas import Pila1, menu1, menu2
 from Recur_Grafos.Recursividad import menu1_R, menu2_R
+from ArbolB_Concu.Arbol_Binario import ABB1, ABB2
 from Recur_Grafos.Grafos import Aeropuertos
 from AeroPaletas.Grafos_AeroPaletas import Aeropuertos_1
 import tkinter as tk
@@ -200,6 +201,48 @@ class AP:
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=ejecutar_accion).grid(padx=40, row=1, column=0)
                 tk.Button(ventanaP1, text="Salir", font=("Arial", 14), command=salir).grid(padx=40, row=2, column=0)
         
+    def Bin_Concu(self, x):
+        self.ventana.destroy()
+        if x==1:
+                def ejecutar_accion():
+                    nonlocal ventana_abierta
+                    if not ventana_abierta:
+                        ventana_abierta = True
+                        if y.get() == 1:
+                            ventanaP1.destroy()
+                            a=ABB1
+                            a.menuPrincipal()
+                        elif y.get() == 2:
+                            ventanaP1.destroy()
+                            a=ABB2
+                            a.menuPrincipal()
+                
+                ventanaP1 = tk.Tk()
+                ventanaP1.title("Arboles Binarios")
+                ventanaP1.geometry("500x400+240+240")
+                y=tk.IntVar(value=0)
+                ventana_abierta = False
+                p1=tk.Label(ventanaP1, text="Actividad 4.1", font=("Arial", 14)).grid(padx=20, row=3, column=1)
+                p2=tk.Label(ventanaP1, text="Actividad 4.2", font=("Arial", 14)).grid(padx=20, row=3, column=3)
+                titulo=tk.Label(ventanaP1, text="Actividades", font=("Arial", 18)).grid(pady=5, row=0, column=2)
+                tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(1), ejecutar_accion()]).grid(padx=40, row=4, column=1)
+                tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=3)
+        elif x==2:
+                def ejecutar_accion():
+                    c1 = Aeropuertos()
+                    c1.mostrar()
+                def salir():
+                    ventanaP1.destroy()
+                    self.menuPrincipal()
+                ventanaP1 = tk.Tk()
+                ventanaP1.title("Practica 3.2 (Grafos)")
+                ventanaP1.geometry("500x400+240+240")
+                y=tk.IntVar(value=0)
+                ventana_abierta = False
+                titulo=tk.Label(ventanaP1, text="Grafo de Viajes y Aerolineas", font=("Arial", 18)).grid(pady=5, row=0, column=0)
+                tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=ejecutar_accion).grid(padx=40, row=1, column=0)
+                tk.Button(ventanaP1, text="Salir", font=("Arial", 14), command=salir).grid(padx=40, row=2, column=0)
+                
     def Aeropal(self):
         self.ventana.destroy()
         aer=Aeropuertos_1()
@@ -230,10 +273,15 @@ class AP:
         menu_Recur_Grafo = tk.Menu(menu_principal, tearoff=0)
         menu_Recur_Grafo.add_command(label="Practica 3.1 (Recursividad)", command=lambda:self.Recur_y_Grafo(1))
         menu_Recur_Grafo.add_command(label="Practica 3.2 (Grafos)", command=lambda:self.Recur_y_Grafo(2))
+        
+        menu_ArbolB_Concu = tk.Menu(menu_principal, tearoff=0)
+        menu_ArbolB_Concu.add_command(label="4.1-4.2 Arboles Binarios", command=lambda:self.Bin_Concu(1))
+        menu_ArbolB_Concu.add_command(label="Concurencia", command=lambda:self.Bin_Concu(2))
 
         menu_principal.add_cascade(label="Contenedores", menu=menu_Contenedores)
         menu_principal.add_cascade(label="Colas y Pilas", menu=menu_Colas_Pilas)
         menu_principal.add_cascade(label="Recursividad y Grafos", menu=menu_Recur_Grafo)
+        menu_principal.add_cascade(label="Arbol Binario y Concurencia", command=menu_ArbolB_Concu)
         menu_principal.add_cascade(label="Proyecto (AeroPaletas)", command=self.Aeropal)
         menu_principal.add_cascade(label="Acerca de", command=self.acerca_de)       
         menu_principal.add_cascade(label="Salir", command=self.salir)
