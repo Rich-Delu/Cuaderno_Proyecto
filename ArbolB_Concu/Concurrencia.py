@@ -55,10 +55,16 @@ class DulceriaCP:
                 self.cola_clientes.task_done()
     
     def simulador(self):
-        total_clientes = int(self.Nce.get())
-        tl=float(self.Tle.get())
+        self.info.delete("1.0", tk.END)
+        try:
+            total_clientes = int(self.Nce.get())
+            tl = float(self.Tle.get())
+            pre = int(self.Pre.get())
+        except ValueError:
+            messagebox.showerror("Error", "Por favor ingresa valores numéricos válidos.")
+            return
 
-        self.ventana.after(0, self.actualizar_info,tk.END, f"Dulceria CP")
+        self.ventana.after(0, self.actualizar_info, f"Dulceria CP")
         
         inicio = time.time()
 
@@ -82,11 +88,13 @@ class DulceriaCP:
 
         tiempo_total = fin - inicio
 
-        self.ventana.after(0, self.actualizar_info,tk.END,"\n Todas los clientes fueron atendidos")
-        self.ventana.after(0, self.actualizar_info,tk.END,f"Total de clientes atendidos: {dulceria.atendidos}")
-        self.ventana.after(0, self.actualizar_info,tk.END,f"Tiempo total de atención: {tiempo_total:.2f} segundos")
+        tg= pre * self.atendidos
+        
+        self.ventana.after(0, self.actualizar_info,"\nTodas los clientes fueron atendidos")
+        self.ventana.after(0, self.actualizar_info,f"Total de clientes atendidos: {self.atendidos}")
+        self.ventana.after(0, self.actualizar_info,f"Total de Dinero Obtenido: {tg}$")
+        self.ventana.after(0, self.actualizar_info,f"Tiempo total de atención: {tiempo_total:.2f} segundos")
 
-    
     def menuPrincipal(self):
         def salir():
           self.ventana.destroy( )
@@ -110,10 +118,13 @@ class DulceriaCP:
         self.Nce=tk.Entry(frame_Solicitar)
         self.Tle=tk.Entry(frame_Solicitar)
         self.Pre=tk.Entry(frame_Solicitar)
-        In=tk.Button(frame_Solicitar, text="Iniciar simulacion",command=self.simulador, font=("Arial", 14))
+        In=tk.Button(frame_Solicitar, text="Iniciar simulacion",command=lambda: threading.Thread(target=self.simulador).start(), font=("Arial", 14))
         bs=tk.Button(frame_Solicitar, text="Salir",command=salir, font=("Arial", 14))
         self.info=tk.Text(frame_Info, width=100, height=10)
         self.info.grid(row=0,column=0)
+        scrollbar = tk.Scrollbar(frame_Info, command=self.info.yview)
+        self.info.config(yscrollcommand=scrollbar.set)
+        scrollbar.grid(row=0, column=1, sticky='ns')
         titulo.grid(row=0, column=0, columnspan=5)
         Nc.grid(row=1, column=0)
         Tl.grid(row=1, column=2)
@@ -128,6 +139,4 @@ class DulceriaCP:
         frame_Solicitar.rowconfigure(1, weight=1)
         frame_Solicitar.rowconfigure(2, weight=1)
 
-        self.ventana.mainloop()
-        
-    
+        self.ventana.mainloop() 
