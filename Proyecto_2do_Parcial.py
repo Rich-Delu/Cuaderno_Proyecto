@@ -11,7 +11,7 @@ from Recur_Grafos.Grafos import Aeropuertos
 from AeroPaletas.Grafos_AeroPaletas import Aeropuertos_1
 import tkinter as tk
 from tkinter import messagebox
- 
+
 class AP:
     def ContenedoresMen(self, x):
         self.ventana.destroy()
@@ -27,7 +27,7 @@ class AP:
                         elif y.get() == 2:
                             ventanaP1.destroy()
                             c2 = Temperatura()
-                            c2.menu()    
+                            c2.menu()
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 1 (Estructuras de Datos y Contenedores en Python")
                 ventanaP1.geometry("500x400+240+240")
@@ -50,7 +50,7 @@ class AP:
                         elif y == 2:
                             ventanaP1.destroy()
                             l2 = TemperaturaLi()
-                            l2.menu()    
+                            l2.menu()
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 2 (Listas)")
                 ventanaP1.geometry("500x400+240+240")
@@ -73,7 +73,7 @@ class AP:
                         elif y == 2:
                             ventanaP1.destroy()
                             Con2 = Alumnos()
-                            Con2.menu()    
+                            Con2.menu()
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 3 (Conjuntos)")
                 ventanaP1.geometry("500x400+240+240")
@@ -96,7 +96,7 @@ class AP:
                         elif y == 2:
                             ventanaP1.destroy()
                             Dic2 = RegistroEmpleados()
-                            Dic2.menu()    
+                            Dic2.menu()
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 4 (Diccionarios)")
                 ventanaP1.geometry("500x400+240+240")
@@ -125,7 +125,7 @@ class AP:
                         elif y.get() == 3:
                             ventanaP1.destroy()
                             menu2()
-                
+
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 2.1 (Pilas)")
                 ventanaP1.geometry("500x400+240+240")
@@ -150,7 +150,7 @@ class AP:
                         elif y.get() == 2:
                             ventanaP1.destroy()
                             c2 = Tareas()
-                            c2.menu()  
+                            c2.menu()
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 2.2 (Colas)")
                 ventanaP1.geometry("500x400+240+240")
@@ -175,7 +175,7 @@ class AP:
                         elif y.get() == 2:
                             ventanaP1.destroy()
                             menu2_R()
-                
+
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Practica 3.1 (Recusividad)")
                 ventanaP1.geometry("500x400+240+240")
@@ -201,7 +201,7 @@ class AP:
                 titulo=tk.Label(ventanaP1, text="Grafo de Viajes y Aerolineas", font=("Arial", 18)).grid(pady=5, row=0, column=0)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=ejecutar_accion).grid(padx=40, row=1, column=0)
                 tk.Button(ventanaP1, text="Salir", font=("Arial", 14), command=salir).grid(padx=40, row=2, column=0)
-        
+
     def Bin_Concu(self, x):
         self.ventana.destroy()
         if x==1:
@@ -221,7 +221,7 @@ class AP:
                             ventanaP1.destroy()
                             a=ABB3()
                             a.menu()
-                
+
                 ventanaP1 = tk.Tk()
                 ventanaP1.title("Arboles Binarios")
                 ventanaP1.geometry("500x400+240+240")
@@ -235,14 +235,15 @@ class AP:
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=2)
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(3), ejecutar_accion()]).grid(padx=20, row=4, column=3)
         elif x==2:
-                c1 = DulceriaCP()
-                c1.menuPrincipal()
-                
+            x=4
+            c1 = DulceriaCP(x)
+            c1.menuPrincipal()
+
     def Aeropal(self):
         self.ventana.destroy()
         aer=Aeropuertos_1()
-        aer.menuPrincipal()        
- 
+        aer.menuPrincipal()
+
     def salir(self):
         self.ventana.destroy()
 
@@ -264,11 +265,11 @@ class AP:
         menu_Colas_Pilas = tk.Menu(menu_principal, tearoff=0)
         menu_Colas_Pilas.add_command(label="Practica 2.1 (Pilas)", command=lambda:self.Colas_y_Pilas(1))
         menu_Colas_Pilas.add_command(label="Practica 2.2 (Colas)", command=lambda:self.Colas_y_Pilas(2))
-        
+
         menu_Recur_Grafo = tk.Menu(menu_principal, tearoff=0)
         menu_Recur_Grafo.add_command(label="Practica 3.1 (Recursividad)", command=lambda:self.Recur_y_Grafo(1))
         menu_Recur_Grafo.add_command(label="Practica 3.2 (Grafos)", command=lambda:self.Recur_y_Grafo(2))
-        
+
         menu_ArbolB_Concu = tk.Menu(menu_principal, tearoff=0)
         menu_ArbolB_Concu.add_command(label="4.1-4.2-4.3 Arboles Binarios", command=lambda:self.Bin_Concu(1))
         menu_ArbolB_Concu.add_command(label="5.3 Concurrencia", command=lambda:self.Bin_Concu(2))
@@ -278,7 +279,7 @@ class AP:
         menu_principal.add_cascade(label="Recursividad y Grafos", menu=menu_Recur_Grafo)
         menu_principal.add_cascade(label="Arbol Binario y Concurencia", menu=menu_ArbolB_Concu)
         menu_principal.add_cascade(label="Proyecto (AeroPaletas)", command=self.Aeropal)
-        menu_principal.add_cascade(label="Acerca de", command=self.acerca_de)       
+        menu_principal.add_cascade(label="Acerca de", command=self.acerca_de)
         menu_principal.add_cascade(label="Salir", command=self.salir)
 
         titulo=tk.Label(self.ventana, text="Cuaderno de Evidencias para el Segundo Parcial", font=("Arial", 18))
