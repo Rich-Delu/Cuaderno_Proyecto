@@ -16,10 +16,10 @@ class Aeropuertos_1:
         self.g = nx.DiGraph()
     
     def cargar_J(self):
-        with open("AeroPaletas/Json/Info.json") as f:
+        with open("Cuaderno/AeroPaletas/Json/Info.json") as f:
             self.info=json.load(f)
         
-        with open("AeroPaletas/Json/Aero.json") as x:
+        with open("Cuaderno/AeroPaletas/Json/Aero.json") as x:
             self.Aero=json.load(x) 
         
     def crear_nodos(self):

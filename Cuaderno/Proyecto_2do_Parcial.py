@@ -14,7 +14,7 @@ from tkinter import messagebox
 
 class AP:
     def ContenedoresMen(self, x):
-        self.ventana.destroy()
+        self.ventanaP.destroy()
         if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
@@ -109,7 +109,7 @@ class AP:
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda:ejecutar_accion(2)).grid(padx=20, row=4, column=3)
 
     def Colas_y_Pilas(self,x):
-        self.ventana.destroy()
+        self.ventanaP.destroy()
         if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
@@ -163,7 +163,7 @@ class AP:
                 tk.Button(ventanaP1, text="Ejecutar", font=("Arial", 14), command=lambda: [y.set(2), ejecutar_accion()]).grid(padx=20, row=4, column=3)
 
     def Recur_y_Grafo(self, x):
-        self.ventana.destroy()
+        self.ventanaP.destroy()
         if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
@@ -203,7 +203,7 @@ class AP:
                 tk.Button(ventanaP1, text="Salir", font=("Arial", 14), command=salir).grid(padx=40, row=2, column=0)
 
     def Bin_Concu(self, x):
-        self.ventana.destroy()
+        self.ventanaP.destroy()
         if x==1:
                 def ejecutar_accion():
                     nonlocal ventana_abierta
@@ -240,21 +240,21 @@ class AP:
             c1.menuPrincipal()
 
     def Aeropal(self):
-        self.ventana.destroy()
+        self.ventanaP.destroy()
         aer=Aeropuertos_1()
         aer.menuPrincipal()
 
     def salir(self):
-        self.ventana.destroy()
+        self.ventanaP.destroy()
 
     def acerca_de(self):
         messagebox.showinfo("Acerca del Alumno", "Alumno: Delucio Fuentes Ricardo Ismael")
 
     def menuPrincipal(self):
-        self.ventana = tk.Tk()
-        self.ventana.title("Examen")
-        self.ventana.geometry("900x300+240+240")
-        menu_principal=tk.Menu(self.ventana)
+        self.ventanaP = tk.Tk()
+        self.ventanaP.title("Examen")
+        self.ventanaP.geometry("900x300+240+240")
+        menu_principal=tk.Menu(self.ventanaP)
 
         menu_Contenedores = tk.Menu(menu_principal, tearoff=0)
         menu_Contenedores.add_command(label="Practica 1 (Estructuras de Datos y Contenedores en Python)", command=lambda:self.ContenedoresMen(1))
@@ -282,13 +282,13 @@ class AP:
         menu_principal.add_cascade(label="Acerca de", command=self.acerca_de)
         menu_principal.add_cascade(label="Salir", command=self.salir)
 
-        titulo=tk.Label(self.ventana, text="Cuaderno de Evidencias para el Segundo Parcial", font=("Arial", 18))
-        intro=tk.Label(self.ventana, text="En este programa estan todas las practicas hechas y  guardadas en distintos menus", font=("Arial", 14))
+        titulo=tk.Label(self.ventanaP, text="Cuaderno de Evidencias para el Segundo Parcial", font=("Arial", 18))
+        intro=tk.Label(self.ventanaP, text="En este programa estan todas las practicas hechas y  guardadas en distintos menus", font=("Arial", 14))
         titulo.grid(row=0, column=5)
         intro.grid(row=1, column=5)
-        self.ventana.config(menu=menu_principal)
+        self.ventanaP.config(menu=menu_principal)
 
-        self.ventana.mainloop()
+        self.ventanaP.mainloop()
 
 if __name__=='__main__':
     pro=AP()
